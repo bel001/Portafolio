@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>
+      (() => {
+        let savedTheme;
+        try { savedTheme = localStorage.getItem('portfolio-theme'); } catch (_) {}
+        const theme = savedTheme === 'light' || savedTheme === 'dark'
+          ? savedTheme
+          : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#111917' : '#ffffff';
+      })();
+    </script>
+    <meta name="description" content="Soy Rodrigo (bel001). Desarrollo aplicaciones web, herramientas de escritorio y proyectos de IA. Explora mis proyectos, código y demos." />
+    <link rel="canonical" href="https://bel001.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bel001.github.io/" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Rodrigo — proyectos de software" />
+    <meta property="og:description" content="De horarios universitarios a herramientas para Windows. Proyectos reales, código y demos de Rodrigo (bel001)." />
+    <meta property="og:image" content="https://bel001.github.io/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Portafolio de Rodrigo: título Del horario al hardware y captura de Horatriz" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Rodrigo — proyectos de software</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="./assets/fonts/bricolage-800.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Ir al contenido</a>
+    <div class="site-shell">
+      <header class="site-header" id="inicio">
+        <a class="wordmark" href="#inicio" aria-label="bel001, volver al inicio">bel001<span aria-hidden="true">.</span></a>
+        <div class="header-actions">
+          <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#contacto">Contacto</a>
+            <a class="nav-external" href="https://github.com/bel001" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </nav>
+          <button class="theme-toggle" type="button" aria-label="Modo oscuro" aria-pressed="false" title="Activar modo oscuro">
+            <svg class="moon-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none"><path d="M20.1 15.6A8.5 8.5 0 0 1 8.4 3.9 8.5 8.5 0 1 0 20.1 15.6Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="sun-icon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </button>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+            <span></span><span></span>
+          </button>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="intro" aria-labelledby="intro-title">
+          <div class="intro-copy">
+            <h1 id="intro-title">Del horario<br />al hardware<span class="point">.</span></h1>
+            <p>Soy <strong>Rodrigo</strong>, también <strong>bel001</strong> en GitHub. Desarrollo aplicaciones web, proyectos de IA y herramientas de escritorio. Aquí puedes abrir, revisar y probar mi trabajo.</p>
+            <a class="inline-link intro-link" href="#proyectos">Explorar proyectos <span aria-hidden="true">↘</span></a>
+          </div>
+          <figure class="project-visual horatriz-visual">
+            <img src="./assets/horatriz-schedule.png" width="1440" height="900" alt="Captura real de Horatriz: horario semanal generado con los datos de ejemplo de la aplicación." fetchpriority="high" decoding="async" />
+            <figcaption>Horatriz — horario generado con datos de ejemplo</figcaption>
+            <button class="image-expand" type="button">Ampliar captura</button>
+          </figure>
+        </section>
+
+        <section class="featured-project" id="proyectos" aria-labelledby="horatriz-title">
+          <div class="section-rule"><h2>Proyectos seleccionados</h2></div>
+          <div class="feature-layout">
+            <div class="feature-copy">
+              <div class="feature-title">
+                <span class="project-category">Aplicación web · TypeScript</span>
+                <h3 id="horatriz-title">Horatriz</h3>
+              </div>
+              <div class="feature-details">
+                <p>Genera horarios universitarios a partir de la oferta académica y compara opciones según las preferencias del estudiante.</p>
+                <dl class="project-story">
+                  <div><dt>Problema</dt><dd>Una oferta con varias secciones hace difícil encontrar combinaciones sin cruces.</dd></div>
+                  <div><dt>Mi aporte</dt><dd>Construí el lector de ofertas, el generador de horarios y una puntuación ajustable.</dd></div>
+                  <div><dt>Resultado</dt><dd>Se pueden comparar opciones en el navegador sin enviar la oferta a un servidor.</dd></div>
+                </dl>
+                <div class="feature-links">
+                  <a class="button-solid" href="https://horatriz.vercel.app" target="_blank" rel="noopener noreferrer">Probar Horatriz <span aria-hidden="true">↗</span></a>
+                  <a class="inline-link" href="https://github.com/bel001/Horatriz" target="_blank" rel="noopener noreferrer">Ver código <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="second-project" aria-labelledby="codevibe-title">
+          <div class="second-layout">
+            <figure class="project-visual codevibe-visual">
+              <img src="./assets/codevibe-screen.png" width="1920" height="975" alt="Captura real de CodeVibe: código Python a la izquierda y una explicación del tutor a la derecha." loading="lazy" decoding="async" />
+              <figcaption>CodeVibe — captura publicada en el repositorio</figcaption>
+              <button class="image-expand" type="button">Ampliar captura</button>
+            </figure>
+            <div class="second-copy">
+              <span class="project-category">Tutor de programación · Python</span>
+              <h2 id="codevibe-title">CodeVibe</h2>
+              <p>Un tutor interactivo que explica código con distintas personalidades y voces.</p>
+              <dl class="project-story">
+                <div><dt>Problema</dt><dd>Una sola forma de explicar no funciona igual para todas las personas.</dd></div>
+                <div><dt>Mi aporte</dt><dd>Desarrollé siete estilos de tutor, chat de seguimiento y respuestas con voz.</dd></div>
+                <div><dt>Resultado</dt><dd>Permite explicar, corregir, documentar y optimizar código con el estilo elegido.</dd></div>
+              </dl>
+              <a class="inline-link" href="https://github.com/bel001/CodeVibe-El-Tutor-con-Personalidad" target="_blank" rel="noopener noreferrer">Explorar el proyecto <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="packia-project" aria-labelledby="packia-title">
+          <div class="packia-layout">
+            <div class="packia-copy">
+              <span class="project-category">Proyecto académico · FastAPI + Next.js</span>
+              <h2 id="packia-title">PackIA Express</h2>
+              <p>Una plataforma para una empresa de paquetería. Once agentes coordinados con LangGraph procesan cada envío, y los casos críticos se detienen hasta que una persona los revisa.</p>
+              <dl class="project-story">
+                <div><dt>Problema</dt><dd>Automatizar un envío sin que el sistema salte etapas ni tome decisiones que le corresponden a una persona.</dd></div>
+                <div><dt>Enfoque</dt><dd>Máquina de estados, revisión humana guardada en PostgreSQL, portales por rol y un chatbot RAG con respaldo por reglas.</dd></div>
+                <div><dt>Validación</dt><dd>18 pruebas de backend aprobadas y build de producción de Next.js con 39 rutas.</dd></div>
+              </dl>
+              <a class="inline-link" href="https://github.com/bel001/Sistema-multiagente-Packia-Express" target="_blank" rel="noopener noreferrer">Ver código <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="packia-flow">
+              <ol class="flow-steps">
+                <li><strong>Registrado</strong><span>El cliente cotiza y registra el envío.</span></li>
+                <li><strong>Recibido y validado</strong><span>Almacén confirma la recepción física, el peso y las dimensiones.</span></li>
+                <li><strong>11 agentes · LangGraph</strong><span>Clasificación, cumplimiento, riesgo, ruta y asignación de repartidor por carga.</span></li>
+                <li class="flow-branch"><strong>Revisión humana</strong><span>Solo en casos críticos: aprobar, retener o pedir corrección.</span></li>
+                <li><strong>En ruta</strong><span>Empieza cuando el repartidor confirma el inicio del recorrido.</span></li>
+                <li><strong>Entregado o reintento</strong><span>Los intentos fallidos se registran; al agotarlos, el paquete vuelve a almacén.</span></li>
+              </ol>
+              <figcaption>Flujo de un envío, resumido del README del repositorio</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="more-projects" aria-labelledby="more-title">
+          <div class="section-rule"><h2 id="more-title">También he trabajado en</h2></div>
+          <div class="project-list">
+            <article class="project-row">
+              <div><span class="project-category">Prototipo académico · Python</span><h3>MaternIA</h3></div>
+              <p>Triaje materno-fetal preventivo con modelos separados de riesgo materno y estado fetal, integrados con reglas de prioridad.</p>
+              <a href="https://github.com/bel001/maternia-integral" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de MaternIA">↗</a>
+            </article>
+            <article class="project-row">
+              <div><span class="project-category">Visión artificial · Python</span><h3>Detección de EPP</h3></div>
+              <p>Detecta equipos de protección personal en imágenes y video de obra mediante YOLOv8 y muestra alertas visuales.</p>
+              <a href="https://github.com/bel001/Sistema-de-deteccion-de-EPP-en-construccion" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de Detección de EPP">↗</a>
+            </article>
+            <article class="project-row">
+              <div><span class="project-category">Aplicación móvil · Flutter</span><h3>UniThrive</h3></div>
+              <p>Una app para organizar clases, tareas y proyectos durante la vida universitaria.</p>
+              <a href="https://github.com/bel001/UniThrive-App" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de UniThrive">↗</a>
+            </article>
+            <article class="project-row">
+              <div><span class="project-category">Herramienta de sistema · Python</span><h3>RAMCore</h3></div>
+              <p>Monitorización y opciones de optimización de memoria RAM para Windows, con exclusión de procesos.</p>
+              <a href="https://github.com/bel001/RAMCore" target="_blank" rel="noopener noreferrer" aria-label="Ver repositorio de RAMCore">↗</a>
+            </article>
+          </div>
+          <a class="inline-link more-link" href="https://github.com/bel001?tab=repositories" target="_blank" rel="noopener noreferrer">Todos los repositorios en GitHub <span aria-hidden="true">↗</span></a>
+        </section>
+
+        <section class="about" id="sobre-mi" aria-labelledby="about-title">
+          <div class="about-heading"><h2 id="about-title">Sobre mí</h2><span>Rodrigo · bel001</span></div>
+          <div class="about-text">
+            <p>En mi GitHub conviven productos web, herramientas de sistema, aplicaciones móviles y prototipos académicos. Trabajo con TypeScript, Python, Flutter y Rust.</p>
+            <p>Me interesa que una idea termine en algo que se pueda usar o examinar. Por eso enlazo al código y, cuando existe, a una versión pública.</p>
+            <a class="inline-link" href="https://github.com/bel001" target="_blank" rel="noopener noreferrer">Explorar mi GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section class="contact" id="contacto" aria-labelledby="contact-title">
+          <h2 id="contact-title">Hablemos<span class="point">.</span></h2>
+          <div class="contact-details">
+            <p>Si alguno de estos proyectos conecta con lo que haces, puedes escribirme por LinkedIn. Mi código está abierto en GitHub.</p>
+            <div class="contact-links">
+              <a class="button-solid" href="https://www.linkedin.com/in/rodrigo-abel-rodr%C3%ADguez-malca-b33ab5342/" target="_blank" rel="noopener noreferrer">Escribirme por LinkedIn <span aria-hidden="true">↗</span></a>
+              <a class="inline-link" href="https://github.com/bel001" target="_blank" rel="noopener noreferrer">Ver GitHub <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <dialog class="image-dialog" aria-labelledby="image-dialog-title">
+        <div class="image-dialog-header">
+          <div><p id="image-dialog-title"></p><small class="image-dialog-hint">Desliza para explorar la imagen</small></div>
+          <button class="image-dialog-close" type="button">Cerrar</button>
+        </div>
+        <div class="image-dialog-viewport"><img alt="" /></div>
+      </dialog>
+
+      <footer class="site-footer">
+        <span>© <span id="year"></span> bel001</span>
+        <a href="#inicio">Volver arriba ↑</a>
+      </footer>
+    </div>
+  </body>
+</html>
