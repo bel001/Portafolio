@@ -28,18 +28,13 @@ El tema sigue la preferencia del sistema hasta que el visitante elige uno con el
 
 ## Publicar gratis en GitHub Pages
 
-El sitio ya está preparado para `https://bel001.github.io/`: incluye URL canónica, `og:url`, `robots.txt`, `sitemap.xml`, una página `404.html` y `.nojekyll` (sirve los archivos tal cual, sin procesarlos con Jekyll).
+El sitio se publica desde el repositorio `bel001/Portafolio` en `https://bel001.github.io/Portafolio/`. Incluye URL canónica, `og:url`, `sitemap.xml`, una página `404.html` y `.nojekyll` (sirve los archivos tal cual, sin procesarlos con Jekyll).
 
-1. En GitHub, crea un repositorio **público** llamado exactamente `bel001.github.io`, sin README ni `.gitignore` para que empiece vacío.
-2. En esta carpeta (ya es un repositorio git con la rama `main`), ejecuta:
+1. Sube los cambios: `git push -u origin main`.
+2. En el repositorio, abre **Settings → Pages → Build and deployment**, elige **Deploy from a branch** y selecciona **main** y **/ (root)**.
+3. Pasados uno o dos minutos, el sitio estará en `https://bel001.github.io/Portafolio/`.
 
-   ```powershell
-   git remote add origin https://github.com/bel001/bel001.github.io.git
-   git push -u origin main
-   ```
-
-3. En el repositorio, abre **Settings → Pages → Build and deployment**, elige **Deploy from a branch** y selecciona **main** y **/ (root)**.
-4. Pasados uno o dos minutos, el sitio estará en `https://bel001.github.io/`.
+Si más adelante renombras el repositorio a `bel001.github.io`, la dirección pasará a ser `https://bel001.github.io/`. En ese caso, cambia `/Portafolio/` en `index.html`, `sitemap.xml` y `404.html`.
 
 Para actualizarlo más adelante: `git add -A`, `git commit -m "mensaje"` y `git push`.
 
